@@ -1,0 +1,2 @@
+This line was added on GitHub
+this line was added after the conflict was removed
