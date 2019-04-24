@@ -1,6 +1,10 @@
 pipeline {
     agent any
-    tools {
+    
+parameters {
+        string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
+    }
+tools {
         maven 'Maven'
         jdk 'JDK'
     }
@@ -21,6 +25,11 @@ pipeline {
             steps {
                 echo "Cleaning up........!"
                 cleanWs()
+            }
+        }
+      stage('Example') {
+            steps {
+                echo "${params.Greeting} World!"
             }
         }
         
